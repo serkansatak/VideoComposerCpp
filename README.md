@@ -25,6 +25,10 @@ VideoComposer takes images from a folder which has spesific file extensions, sor
 
     Just tests if the output video has same frame count as your folder. Might increase time.
 
+3. ```MULTIPLE_DIRS```
+
+    Like in my case, if you have multiple directories which share a pattern you can modify the code and use this flag too.
+
 
 ## Getting Started <a name = "getting_started"></a>
 

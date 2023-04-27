@@ -25,6 +25,18 @@ public:
         std::sort(results.begin(), results.end());
     }
 
+    static void findSubDirsWithPattern(const std::string& base_directory, const std::string& pattern, PathVector& results) {
+        for (const auto& entry : fs::directory_iterator(base_directory)) {
+            if (fs::is_directory(entry.path())) {
+                // Check if the directories match the pattern
+                if (entry.path().string().find(pattern) != std::string::npos) {
+                    results.push_back(entry.path());
+                }
+            }
+        }
+        std::sort(results.begin(), results.end());
+    }
+
 private:
     // Helper function to check if a string ends with a given suffix, case-insensitively
     static bool ends_with(const std::string& str, const std::string& suffix) {
